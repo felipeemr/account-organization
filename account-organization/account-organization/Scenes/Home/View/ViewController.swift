@@ -14,15 +14,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        configureViews()
+//        configureViews()
     }
 
-    func configureViews() {
-        tableTransaction.dataSource = self
-        tableTransaction.delegate = self
-        tableTransaction.register(type: InfoCell.self)
-
-    }
+//    func configureViews() {
+//        tableTransaction.dataSource = self
+//        tableTransaction.delegate = self
+//        tableTransaction.register(type: InfoCell.self)
+//
+//    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
