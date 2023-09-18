@@ -19,10 +19,10 @@ class ProfileCell: UITableViewCell {
                configStack.spacing = 30
         name.text = "Perfil"
         addSubview(configStack)
-        configStack.fillSuperView(padding: .init(top: 10,
+        configStack.fillSuperView(padding: .init(top: 20,
                                                  left: 50 ,
-                                                 bottom: 10,
-                                                 right: 10))
+                                                 bottom: 20,
+                                                 right: 20))
     }
     
     required init?(coder: NSCoder) {

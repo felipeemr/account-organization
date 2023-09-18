@@ -63,7 +63,4 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         cell.name.text = characters[indexPath.row]
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
-    }
 }
