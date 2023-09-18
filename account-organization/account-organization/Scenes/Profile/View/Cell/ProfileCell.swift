@@ -9,23 +9,30 @@ import UIKit
 
 class ProfileCell: UITableViewCell {
     
-    var name: UILabel = .textBolLabel(20)
-    var iconImage: UIImageView = .iconImageView(width: 30, heigth: 30, namedIcon: "profile-icon")
+    var labelInfo: UILabel = .textBolLabel(20)
+    var iconImage: UIImageView = .iconImageView(width: 40, heigth: 40, namedIcon: "profile-icon")
     
   
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        let configStack = UIStackView(arrangedSubviews: [iconImage, name])
+        setupCell()
+    }
+
+    public func render(nameImage: String, info: String) {
+        iconImage.image = UIImage(named: nameImage)
+        labelInfo.text = info
+    }
+    
+    private func setupCell() {
+        let configStack = UIStackView(arrangedSubviews: [iconImage, labelInfo])
                configStack.spacing = 30
-        name.text = "Perfil"
         addSubview(configStack)
         configStack.fillSuperView(padding: .init(top: 20,
                                                  left: 50 ,
                                                  bottom: 20,
                                                  right: 20))
     }
-    
     required init?(coder: NSCoder) {
         fatalError()
-    }    
+    }
 }

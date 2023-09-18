@@ -13,14 +13,17 @@ class ProfileViewController: UIViewController {
     let headerImage: UIImageView = .headerImageView()
     let iconImage: UIImageView = .iconImageView( namedIcon: "profile")
     let labelName: UILabel = .textBolLabel(25)
+    let labelProfile: UILabel = .textLabel(25)
     let tableInfo: UITableView = UITableView()
     var cellId = "cellId"
-    var characters = ["Informações da Conta", "Privacidade"]
+    var characters = ["profile-icon", "home-icon"]
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         labelName.text = "Felipe Moraes"
+        labelProfile.text = "Perfil"
+        labelProfile.textColor = .white
         tableInfo.register(ProfileCell.self, forCellReuseIdentifier: cellId)
         tableInfo.dataSource = self
         setupConstraints()
@@ -29,6 +32,7 @@ class ProfileViewController: UIViewController {
 
     func setupConstraints() {
         view.addSubview(headerImage)
+        view.addSubview(labelProfile)
         view.addSubview(iconImage)
         view.addSubview(labelName)
         view.addSubview(tableInfo)
@@ -43,7 +47,10 @@ class ProfileViewController: UIViewController {
         
         
         labelName.translatesAutoresizingMaskIntoConstraints = false
+        labelProfile.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            labelProfile.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            labelProfile.centerYAnchor.constraint(equalTo: headerImage.centerYAnchor),
             iconImage.centerXAnchor.constraint(equalTo: headerImage.centerXAnchor),
             iconImage.topAnchor.constraint(equalTo: headerImage.bottomAnchor, constant: -60),
             labelName.centerXAnchor.constraint(equalTo: iconImage.centerXAnchor),
@@ -60,7 +67,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProfileCell
-        cell.name.text = characters[indexPath.row]
+//        cell.name.text = characters[indexPath.row]
+        cell.render(nameImage: characters[indexPath.row], info: characters[indexPath.row])
         return cell
     }
 }
