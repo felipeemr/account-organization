@@ -16,14 +16,16 @@ extension UILabel{
         return label
     }
     
-    static func textBolLabel (_ size: CGFloat, textColor: UIColor = .black, numberOfLines: Int = 1)-> UILabel{
+    static func textBolLabel (_ size: CGFloat, textColor: UIColor = .black, numberOfLines: Int = 1, description: String = "")-> UILabel {
+        
         let label = UILabel()
+        label.text = description
         label.font = UIFont.boldSystemFont(ofSize: size)
         label.textColor = textColor
         label.numberOfLines = numberOfLines
         return label
     }
-    func adicionaShandow () {
+    func addShandow () {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowRadius = 2.0
         self.layer.shadowOpacity = 0.8

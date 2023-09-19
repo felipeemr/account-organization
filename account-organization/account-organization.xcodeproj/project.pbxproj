@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B0A9897FF91DD38F8652B400 /* Pods_account_organization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BED170614A1262F094DC1D8 /* Pods_account_organization.framework */; };
+		ED7B6B722AB93DE700A87E5C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B6B712AB93DE700A87E5C /* HomeViewController.swift */; };
+		ED7B6B742AB93DFD00A87E5C /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B6B732AB93DFD00A87E5C /* TransactionCell.swift */; };
+		ED7B6B762AB93E2300A87E5C /* Extentions + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B6B752AB93E2300A87E5C /* Extentions + UIButton.swift */; };
 		ED7E76212A9EBAB300A899B3 /* Extensions + UITableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E76202A9EBAB300A899B3 /* Extensions + UITableview.swift */; };
 		ED9776F52A657C2C0014B054 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9776F42A657C2C0014B054 /* AppDelegate.swift */; };
 		ED9776F72A657C2C0014B054 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9776F62A657C2C0014B054 /* SceneDelegate.swift */; };
@@ -23,14 +26,15 @@
 		EDE88BAA2AB3B16100CD9543 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE88BA92AB3B16000CD9543 /* Extension + UIView.swift */; };
 		EDE88BAC2AB3BB8200CD9543 /* Extensions + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE88BAB2AB3BB8200CD9543 /* Extensions + UILabel.swift */; };
 		EDE88BAF2AB3C61900CD9543 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE88BAE2AB3C61900CD9543 /* ProfileCell.swift */; };
-		EDF249FA2A6F0C2C002C36B2 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF249F82A6F0C2C002C36B2 /* InfoCell.swift */; };
-		EDF249FB2A6F0C2C002C36B2 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF249F92A6F0C2C002C36B2 /* InfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E95C2173288FB958CD4640E /* Pods-account-organization.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-account-organization.release.xcconfig"; path = "Target Support Files/Pods-account-organization/Pods-account-organization.release.xcconfig"; sourceTree = "<group>"; };
 		4E60B2777120E32EF7937621 /* Pods-account-organization.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-account-organization.debug.xcconfig"; path = "Target Support Files/Pods-account-organization/Pods-account-organization.debug.xcconfig"; sourceTree = "<group>"; };
 		9BED170614A1262F094DC1D8 /* Pods_account_organization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_account_organization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED7B6B712AB93DE700A87E5C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ED7B6B732AB93DFD00A87E5C /* TransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		ED7B6B752AB93E2300A87E5C /* Extentions + UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extentions + UIButton.swift"; sourceTree = "<group>"; };
 		ED7E76202A9EBAB300A899B3 /* Extensions + UITableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions + UITableview.swift"; sourceTree = "<group>"; };
 		ED9776F12A657C2C0014B054 /* account-organization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "account-organization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9776F42A657C2C0014B054 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,8 +52,6 @@
 		EDE88BA92AB3B16000CD9543 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		EDE88BAB2AB3BB8200CD9543 /* Extensions + UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions + UILabel.swift"; sourceTree = "<group>"; };
 		EDE88BAE2AB3C61900CD9543 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		EDF249F82A6F0C2C002C36B2 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
-		EDF249F92A6F0C2C002C36B2 /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				EDE88BA72AB3B13000CD9543 /* Extensions + UIImageView.swift */,
 				EDE88BA92AB3B16000CD9543 /* Extension + UIView.swift */,
 				EDE88BAB2AB3BB8200CD9543 /* Extensions + UILabel.swift */,
+				ED7B6B752AB93E2300A87E5C /* Extentions + UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 		EDF249F62A6F096C002C36B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ED7B6B712AB93DE700A87E5C /* HomeViewController.swift */,
 				EDF249F72A6F0C0E002C36B2 /* Cell */,
 				ED9776F82A657C2C0014B054 /* ViewController.swift */,
 				ED9776FA2A657C2C0014B054 /* Main.storyboard */,
@@ -222,8 +226,7 @@
 		EDF249F72A6F0C0E002C36B2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EDF249F82A6F0C2C002C36B2 /* InfoCell.swift */,
-				EDF249F92A6F0C2C002C36B2 /* InfoCell.xib */,
+				ED7B6B732AB93DFD00A87E5C /* TransactionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -289,7 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED9777012A657C2E0014B054 /* LaunchScreen.storyboard in Resources */,
-				EDF249FB2A6F0C2C002C36B2 /* InfoCell.xib in Resources */,
 				ED9776FE2A657C2E0014B054 /* Assets.xcassets in Resources */,
 				ED9776FC2A657C2C0014B054 /* Main.storyboard in Resources */,
 			);
@@ -344,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED7B6B742AB93DFD00A87E5C /* TransactionCell.swift in Sources */,
 				EDE88BAF2AB3C61900CD9543 /* ProfileCell.swift in Sources */,
 				EDE88BAA2AB3B16100CD9543 /* Extension + UIView.swift in Sources */,
 				EDE88BA02AB3AAFF00CD9543 /* TabBarViewController.swift in Sources */,
@@ -351,11 +354,12 @@
 				ED7E76212A9EBAB300A899B3 /* Extensions + UITableview.swift in Sources */,
 				ED9776F92A657C2C0014B054 /* ViewController.swift in Sources */,
 				EDE88B9D2AB3AADA00CD9543 /* HomeViewModel.swift in Sources */,
+				ED7B6B762AB93E2300A87E5C /* Extentions + UIButton.swift in Sources */,
 				EDE88B9B2AB3AACE00CD9543 /* HomeModel.swift in Sources */,
-				EDF249FA2A6F0C2C002C36B2 /* InfoCell.swift in Sources */,
 				EDE88BA62AB3B0AA00CD9543 /* ProfileViewController.swift in Sources */,
 				ED9776F52A657C2C0014B054 /* AppDelegate.swift in Sources */,
 				EDE88BA82AB3B13000CD9543 /* Extensions + UIImageView.swift in Sources */,
+				ED7B6B722AB93DE700A87E5C /* HomeViewController.swift in Sources */,
 				ED9776F72A657C2C0014B054 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,16 +10,7 @@ import UIKit
 
 class BaseTabBarViewController: UITabBarController {
     
-    private let floatingButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        button.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height - 80)
-        button.backgroundColor = UIColor(red: 14/255, green: 41/255, blue: 84/255, alpha: 1)
-        button.layer.cornerRadius = 40
-        button.setTitle("+", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        return button
-    }()
+    private let floatingButton: UIButton = .floatButton()
 
     
     override func viewDidLoad() {
@@ -37,15 +28,15 @@ class BaseTabBarViewController: UITabBarController {
 
         }
         
+        UITabBar.appearance().tintColor = UIColor(red: 14/255, green: 41/255, blue: 84/255, alpha: 1)
         
-        let homeViewController = createItem(viewController: ViewController(), title: "", image: "home-icon")
+        let homeViewController = createItem(viewController: HomeViewController(), title: "", image: "home-icon")
         let statisticsViewController = createItem(viewController: ViewController(), title: "", image: "statistics-icon")
         let addViewController = createItem(viewController: ViewController(), title: "", image: "")
         let walletViewController = createItem(viewController: UIViewController(), title: "", image: "wallet-icon")
         let profileViewController = createItem(viewController: ProfileViewController(), title: "", image: "profile-icon")
         
         viewControllers =  [homeViewController, statisticsViewController, addViewController, walletViewController,profileViewController]
-//        selectedIndex = 2
     }
     
     func createItem(viewController: UIViewController, title: String, image: String) -> UIViewController {
@@ -61,8 +52,6 @@ class BaseTabBarViewController: UITabBarController {
     }
     
     @objc private func floatingButtonTapped() {
-        // Implemente a ação desejada quando o botão flutuante for tocado
-        
-        print("aqui")
+        print("adicionar novo gasto")
     }
 }

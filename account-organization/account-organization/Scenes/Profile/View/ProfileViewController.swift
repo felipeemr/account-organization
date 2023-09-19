@@ -55,7 +55,7 @@ class ProfileViewController: UIViewController {
             iconImage.topAnchor.constraint(equalTo: headerImage.bottomAnchor, constant: -60),
             labelName.centerXAnchor.constraint(equalTo: iconImage.centerXAnchor),
             labelName.topAnchor.constraint(equalTo: iconImage.bottomAnchor, constant: 10),
-            tableInfo.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 100)
+            tableInfo.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 80)
         ])
     }
 }
