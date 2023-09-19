@@ -8,7 +8,7 @@
 import UIKit
 
 class TransactionCell: UITableViewCell {
-    var labelTitle: UILabel = .textLabel(10)
+    var labelTitle: UILabel = .textLabel(12)
     var labelDate: UILabel = .textLabel(8)
     var labelBalace: UILabel = .textBolLabel(10)
     var imageBalace: UIImageView = .iconImageView(width: 25, heigth: 25, namedIcon: "profile-icon")
@@ -37,7 +37,7 @@ class TransactionCell: UITableViewCell {
                configStack.spacing = 10
         addSubview(configStack)
         configStack.fillSuperView(padding: .init(top: 20,
-                                                 left: 20 ,
+                                                 left: 30 ,
                                                  bottom: 20,
                                                  right:  30))
     }

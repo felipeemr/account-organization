@@ -12,7 +12,6 @@ class BaseTabBarViewController: UITabBarController {
     
     private let floatingButton: UIButton = .floatButton()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

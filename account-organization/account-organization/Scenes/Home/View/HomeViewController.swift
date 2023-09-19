@@ -66,7 +66,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TransactionCell
 //        cell.name.text = characters[indexPath.row]
-        cell.render(nameImage: "home-icon", infoTitle: "suco no ifoodsuco no ifoodsuco no ifoodsuco no ifoodsuco no ifood", infoDate: "26/08/2023", infoBalace: "R$ 10,00")
+        cell.render(nameImage: "home-icon", infoTitle: "comida japonesa", infoDate: "26/08/2023", infoBalace: "R$ 10,00")
         return cell
     }
 }
