@@ -8,8 +8,9 @@
 import UIKit
 
 extension UILabel{
-    static func textLabel (_ size: CGFloat, textColor: UIColor = .black, numberOfLines: Int = 1)-> UILabel{
+    static func textLabel (_ size: CGFloat, textColor: UIColor = .black, numberOfLines: Int = 1, description: String = "")-> UILabel{
         let label = UILabel()
+        label.text = description
         label.font = UIFont.systemFont(ofSize: size)
         label.textColor = textColor
         label.numberOfLines = numberOfLines

@@ -10,7 +10,7 @@ import UIKit
 class TransactionCell: UITableViewCell {
     var labelTitle: UILabel = .textLabel(12)
     var labelDate: UILabel = .textLabel(8)
-    var labelBalace: UILabel = .textBolLabel(10)
+    var labelBalace: UILabel = .textBolLabel(10, textColor: .green)
     var imageBalace: UIImageView = .iconImageView(width: 25, heigth: 25, namedIcon: "profile-icon")
     let viewSeparetor: UIView = UIView()
     
@@ -28,7 +28,6 @@ class TransactionCell: UITableViewCell {
     }
     
     private func setupCell() {
-        labelBalace.textColor = .green
         let infoStack = UIStackView(arrangedSubviews: [labelTitle, labelDate])
         infoStack.axis = .vertical
         infoStack.spacing = 5
