@@ -12,8 +12,8 @@ class ProfileViewController: UIViewController {
     
     let headerImage: UIImageView = .headerImageView()
     let iconImage: UIImageView = .iconImageView( namedIcon: "profile")
-    let labelName: UILabel = .textBolLabel(25)
-    let labelProfile: UILabel = .textLabel(25)
+    let labelName: UILabel = .textBolLabel(25, description: "Felipe Moraes")
+    let labelTitleHeader: UILabel = .textLabel(25, textColor: .white, description: "Perfil")
     let tableInfo: UITableView = UITableView()
     var cellId = "cellId"
     var characters = ["profile-icon", "home-icon"]
@@ -21,9 +21,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelName.text = "Felipe Moraes"
-        labelProfile.text = "Perfil"
-        labelProfile.textColor = .white
         tableInfo.register(ProfileCell.self, forCellReuseIdentifier: cellId)
         tableInfo.dataSource = self
         setupConstraints()
@@ -32,31 +29,40 @@ class ProfileViewController: UIViewController {
 
     func setupConstraints() {
         view.addSubview(headerImage)
-        view.addSubview(labelProfile)
+        view.addSubview(labelTitleHeader)
         view.addSubview(iconImage)
         view.addSubview(labelName)
         view.addSubview(tableInfo)
+        
         headerImage.fill(top: view.topAnchor,
                          leading: view.leadingAnchor,
                          trailing: view.trailingAnchor,
                          bottom: nil)
-        tableInfo.fill(top: nil,
+        
+        labelTitleHeader.textAlignment = .center
+        labelTitleHeader.fill(top: headerImage.topAnchor,
+                              leading: headerImage.leadingAnchor,
+                              trailing: headerImage.trailingAnchor,
+                              bottom: nil,
+                              padding: .init(top: 155, left: 0, bottom: 0, right: 0))
+        
+        iconImage.fill(top: headerImage.bottomAnchor,
+                       leading: headerImage.centerXAnchor,
+                       trailing: nil,
+                       bottom: nil,
+                       padding: .init(top: -60, left: -60, bottom: 0, right: 0))
+
+        labelName.textAlignment = .center
+        labelName.fill(top: iconImage.bottomAnchor,
                        leading: view.leadingAnchor,
                        trailing: view.trailingAnchor,
-                       bottom: view.bottomAnchor)
+                       bottom: nil,
+                       padding: .init(top: 10, left: 0, bottom: 0, right: 0))
         
-        
-        labelName.translatesAutoresizingMaskIntoConstraints = false
-        labelProfile.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            labelProfile.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            labelProfile.centerYAnchor.constraint(equalTo: headerImage.centerYAnchor),
-            iconImage.centerXAnchor.constraint(equalTo: headerImage.centerXAnchor),
-            iconImage.topAnchor.constraint(equalTo: headerImage.bottomAnchor, constant: -60),
-            labelName.centerXAnchor.constraint(equalTo: iconImage.centerXAnchor),
-            labelName.topAnchor.constraint(equalTo: iconImage.bottomAnchor, constant: 10),
-            tableInfo.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 80)
-        ])
+        tableInfo.fill(top: labelName.bottomAnchor,
+                       leading: view.leadingAnchor,
+                       trailing: view.trailingAnchor,
+                       bottom: view.bottomAnchor, padding: .init(top: 80, left: 0, bottom: 0, right: 0))
     }
 }
 
@@ -67,7 +73,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProfileCell
-//        cell.name.text = characters[indexPath.row]
+        cell.selectionStyle = .none
         cell.render(nameImage: characters[indexPath.row], info: characters[indexPath.row])
         return cell
     }

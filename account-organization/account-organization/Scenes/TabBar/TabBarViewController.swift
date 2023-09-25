@@ -17,7 +17,7 @@ class BaseTabBarViewController: UITabBarController {
         
         if #available(iOS 13.0, *) {
             let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
-            tabBarAppearance.configureWithDefaultBackground()
+            tabBarAppearance.backgroundColor = .white
             if #available(iOS 15.0, *) {
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
@@ -29,28 +29,33 @@ class BaseTabBarViewController: UITabBarController {
         
         UITabBar.appearance().tintColor = UIColor(red: 14/255, green: 41/255, blue: 84/255, alpha: 1)
         
-        let homeViewController = createItem(viewController: HomeViewController(), title: "", image: "home-icon")
-        let statisticsViewController = createItem(viewController: ViewController(), title: "", image: "statistics-icon")
-        let addViewController = createItem(viewController: ViewController(), title: "", image: "")
-        let walletViewController = createItem(viewController: UIViewController(), title: "", image: "wallet-icon")
-        let profileViewController = createItem(viewController: ProfileViewController(), title: "", image: "profile-icon")
+        let homeViewController = createItem(viewController: HomeViewController(), image: "home-icon")
+        let statisticsViewController = createItem(viewController: ViewController(), image: "statistics-icon")
+        let addViewController = createItem(viewController: ViewController(), image: "")
+        let walletViewController = createItem(viewController: StatisticsViewController(), image: "wallet-icon")
+        let profileViewController = createItem(viewController: ProfileViewController(), image: "profile-icon")
         
         viewControllers =  [homeViewController, statisticsViewController, addViewController, walletViewController,profileViewController]
     }
     
-    func createItem(viewController: UIViewController, title: String, image: String) -> UIViewController {
+    func createItem(viewController: UIViewController, image: String) -> UIViewController {
         let navViewController = UINavigationController(rootViewController: viewController)
         
         navViewController.navigationBar.prefersLargeTitles = true
-        
-        viewController.navigationItem.title = title
-        viewController.tabBarItem.title = title
         viewController.tabBarItem.image = UIImage(named: image)
         viewController.view.backgroundColor = .white
         return navViewController
     }
     
     @objc private func floatingButtonTapped() {
-        print("adicionar novo gasto")
+        let newPantryViewController = NewPantryViewController()
+        newPantryViewController.modalPresentationStyle = .popover
+        newPantryViewController.modalPresentationCapturesStatusBarAppearance = false
+        
+        
+        if let safeNavigation = selectedViewController as? UINavigationController {
+            safeNavigation.modalPresentationStyle = .popover
+            safeNavigation.pushViewController(newPantryViewController, animated: true)
+        }
     }
 }

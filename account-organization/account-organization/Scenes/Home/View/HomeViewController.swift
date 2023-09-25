@@ -41,47 +41,53 @@ class HomeViewController: UIViewController{
         view.addSubview(stackHitoryTransactions)
         view.addSubview(tableTransactions)
         
-        viewTransactions.size(size: .init(width: 374,
-                                          height: 200))
+       
         
         headerImage.fill(top: view.topAnchor,
                          leading: view.leadingAnchor,
                          trailing: view.trailingAnchor,
                          bottom: nil)
+    
         
-        tableTransactions.fill(top: nil,
+        labeltitleHeader.textAlignment = .center
+        labeltitleHeader.fill(top: headerImage.topAnchor,
+                              leading: headerImage.leadingAnchor,
+                              trailing: headerImage.trailingAnchor,
+                              bottom: nil,
+                              padding: .init(top: 155, left: 0, bottom: 0, right: 0))
+        
+        
+        viewTransactions.size(size: .init(width: 374,
+                                          height: 200))
+        viewTransactions.fill(top: labeltitleHeader.bottomAnchor,
+                              leading: view.leadingAnchor,
+                              trailing: view.trailingAnchor,
+                              bottom: nil,
+                              padding: .init(top: 60, left: 20, bottom: 0, right: 20))
+        
+        stackHitoryTransactions.fill(top: viewTransactions.bottomAnchor,
+                                     leading: view.leadingAnchor,
+                                     trailing: view.trailingAnchor,
+                                     bottom: nil, padding: .init(top: 40, left: 25, bottom: 0, right: 25))
+        
+        tableTransactions.backgroundColor = .white
+        tableTransactions.fill(top: stackHitoryTransactions.bottomAnchor,
                        leading: view.leadingAnchor,
                        trailing: view.trailingAnchor,
                        bottom: view.bottomAnchor)
-        
-        labeltitleHeader.translatesAutoresizingMaskIntoConstraints = false
-        stackHitoryTransactions.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([ labeltitleHeader.centerXAnchor.constraint(equalTo: headerImage.centerXAnchor),
-                                      labeltitleHeader.centerYAnchor.constraint(equalTo: headerImage.centerYAnchor),
-                                      viewTransactions.topAnchor.constraint(equalTo: labeltitleHeader.bottomAnchor, constant: 60),
-                                      viewTransactions.centerXAnchor.constraint(equalTo: headerImage.centerXAnchor),
-                                      stackHitoryTransactions.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-                                      stackHitoryTransactions.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-                                      stackHitoryTransactions.topAnchor.constraint(equalTo: viewTransactions.bottomAnchor, constant: 60),
-                                      tableTransactions.topAnchor.constraint(equalTo: stackHitoryTransactions.bottomAnchor),
-
-                                      ])
     }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return   5
+        return   0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TransactionCell
-//        cell.name.text = characters[indexPath.row]
+        cell.selectionStyle = .none
+        cell.backgroundColor = .clear
         cell.render(nameImage: "home-icon", infoTitle: "comida japonesa", infoDate: "26/08/2023", infoBalace: "R$ 10,00")
         return cell
     }
-}
-
-class TransactionsInfo: UIView {
-    
 }
