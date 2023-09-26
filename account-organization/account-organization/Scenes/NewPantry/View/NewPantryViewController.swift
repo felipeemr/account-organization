@@ -12,9 +12,9 @@ class NewPantryViewController: UIViewController {
 
     let headerImage: UIImageView = .headerImageView()
     let labeltitleHeader: UILabel = .textBolLabel(25, textColor: .white, description: "Adicionar despesa")
-    let labeltitleGasto: UILabel = .textBolLabel(25, textColor: .black, description: "Titulo")
-    let viewAdd: UIStackView = UIStackView()
+    let labeltitleGasto: UILabel = .textBolLabel(18, textColor: .darkGray, description: "Titulo")
     let textFieldTitle: UITextField = UITextField()
+    let stackAddNewPantry: UIStackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,27 +23,37 @@ class NewPantryViewController: UIViewController {
     }
     
     func configureView() {
+        
+        
         view.addSubview(headerImage)
         view.addSubview(labeltitleHeader)
-        view.addSubview(viewAdd)
-        viewAdd.addSubview(labeltitleGasto)
+        view.addSubview(stackAddNewPantry)
         
+        stackAddNewPantry.addSubview(labeltitleGasto)
+        stackAddNewPantry.addArrangedSubview(textFieldTitle)
         
-        headerImage.fill(top: view.topAnchor,
+        labeltitleGasto.fillConstraints(top: stackAddNewPantry.topAnchor,
+                                        leading: stackAddNewPantry.leadingAnchor,
+                                        trailing: nil,
+                                        bottom: nil,padding: .init(top: 20, left: 20, bottom: 0, right: 0))
+        
+    
+        
+        headerImage.fillConstraints(top: view.topAnchor,
                          leading: view.leadingAnchor,
                          trailing: view.trailingAnchor,
                          bottom: nil)
         
         labeltitleHeader.textAlignment = .center
-        labeltitleHeader.fill(top: view.topAnchor,
+        labeltitleHeader.fillConstraints(top: view.topAnchor,
                               leading: view.leadingAnchor,
                               trailing: view.trailingAnchor,
                               bottom: nil,
                               padding: .init(top: 155, left: 0, bottom: 0, right: 0))
         
-        viewAdd.layer.cornerRadius = 10
-        viewAdd.backgroundColor = .white
-        viewAdd.fill(top: labeltitleHeader.bottomAnchor,
+        stackAddNewPantry.layer.cornerRadius = 10
+        stackAddNewPantry.backgroundColor = .white
+        stackAddNewPantry.fillConstraints(top: labeltitleHeader.bottomAnchor,
                      leading: view.leadingAnchor,
                      trailing: view.trailingAnchor,
                      bottom: view.bottomAnchor,

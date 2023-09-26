@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
     
-    func fill (top: NSLayoutYAxisAnchor?,
+    func fillConstraints(top: NSLayoutYAxisAnchor?,
                leading: NSLayoutXAxisAnchor?,
                trailing: NSLayoutXAxisAnchor?,
                bottom: NSLayoutYAxisAnchor?,
@@ -42,8 +42,8 @@ extension UIView {
         }
     }
     
-    func fillSuperView (padding: UIEdgeInsets = .zero) {
-        fill(
+    func fillSuperView(padding: UIEdgeInsets = .zero) {
+        fillConstraints(
             top: superview?.topAnchor,
             leading: superview?.leadingAnchor,
             trailing: superview?.trailingAnchor,
@@ -87,13 +87,13 @@ extension UIView {
     func configureHeader(_ headerImage: UIImageView, labeltitleHeader: UILabel) {
         
         
-        headerImage.fill(top: superview?.topAnchor,
+        headerImage.fillConstraints(top: superview?.topAnchor,
                          leading: superview?.leadingAnchor,
                          trailing: superview?.trailingAnchor,
                          bottom: nil)
         
         labeltitleHeader.textAlignment = .center
-        labeltitleHeader.fill(top: headerImage.topAnchor,
+        labeltitleHeader.fillConstraints(top: headerImage.topAnchor,
                               leading: headerImage.leadingAnchor,
                               trailing: headerImage.trailingAnchor,
                               bottom: nil,

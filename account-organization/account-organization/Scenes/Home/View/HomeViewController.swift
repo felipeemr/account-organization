@@ -43,14 +43,14 @@ class HomeViewController: UIViewController{
         
        
         
-        headerImage.fill(top: view.topAnchor,
+        headerImage.fillConstraints(top: view.topAnchor,
                          leading: view.leadingAnchor,
                          trailing: view.trailingAnchor,
                          bottom: nil)
     
         
         labeltitleHeader.textAlignment = .center
-        labeltitleHeader.fill(top: headerImage.topAnchor,
+        labeltitleHeader.fillConstraints(top: headerImage.topAnchor,
                               leading: headerImage.leadingAnchor,
                               trailing: headerImage.trailingAnchor,
                               bottom: nil,
@@ -59,19 +59,19 @@ class HomeViewController: UIViewController{
         
         viewTransactions.size(size: .init(width: 374,
                                           height: 200))
-        viewTransactions.fill(top: labeltitleHeader.bottomAnchor,
+        viewTransactions.fillConstraints(top: labeltitleHeader.bottomAnchor,
                               leading: view.leadingAnchor,
                               trailing: view.trailingAnchor,
                               bottom: nil,
                               padding: .init(top: 60, left: 20, bottom: 0, right: 20))
         
-        stackHitoryTransactions.fill(top: viewTransactions.bottomAnchor,
+        stackHitoryTransactions.fillConstraints(top: viewTransactions.bottomAnchor,
                                      leading: view.leadingAnchor,
                                      trailing: view.trailingAnchor,
                                      bottom: nil, padding: .init(top: 40, left: 25, bottom: 0, right: 25))
         
         tableTransactions.backgroundColor = .white
-        tableTransactions.fill(top: stackHitoryTransactions.bottomAnchor,
+        tableTransactions.fillConstraints(top: stackHitoryTransactions.bottomAnchor,
                        leading: view.leadingAnchor,
                        trailing: view.trailingAnchor,
                        bottom: view.bottomAnchor)

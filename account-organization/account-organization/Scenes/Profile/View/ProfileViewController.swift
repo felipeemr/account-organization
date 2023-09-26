@@ -34,32 +34,32 @@ class ProfileViewController: UIViewController {
         view.addSubview(labelName)
         view.addSubview(tableInfo)
         
-        headerImage.fill(top: view.topAnchor,
+        headerImage.fillConstraints(top: view.topAnchor,
                          leading: view.leadingAnchor,
                          trailing: view.trailingAnchor,
                          bottom: nil)
         
         labelTitleHeader.textAlignment = .center
-        labelTitleHeader.fill(top: headerImage.topAnchor,
+        labelTitleHeader.fillConstraints(top: headerImage.topAnchor,
                               leading: headerImage.leadingAnchor,
                               trailing: headerImage.trailingAnchor,
                               bottom: nil,
                               padding: .init(top: 155, left: 0, bottom: 0, right: 0))
         
-        iconImage.fill(top: headerImage.bottomAnchor,
+        iconImage.fillConstraints(top: headerImage.bottomAnchor,
                        leading: headerImage.centerXAnchor,
                        trailing: nil,
                        bottom: nil,
                        padding: .init(top: -60, left: -60, bottom: 0, right: 0))
 
         labelName.textAlignment = .center
-        labelName.fill(top: iconImage.bottomAnchor,
+        labelName.fillConstraints(top: iconImage.bottomAnchor,
                        leading: view.leadingAnchor,
                        trailing: view.trailingAnchor,
                        bottom: nil,
                        padding: .init(top: 10, left: 0, bottom: 0, right: 0))
         
-        tableInfo.fill(top: labelName.bottomAnchor,
+        tableInfo.fillConstraints(top: labelName.bottomAnchor,
                        leading: view.leadingAnchor,
                        trailing: view.trailingAnchor,
                        bottom: view.bottomAnchor, padding: .init(top: 80, left: 0, bottom: 0, right: 0))

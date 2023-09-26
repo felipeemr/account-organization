@@ -16,7 +16,6 @@ class StatisticsViewController: UIViewController {
     let viewChart: UIView = UIView()
     let cellId = "cellId"
     let tableTransactions: UITableView = UITableView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableTransactions.register(TransactionCell.self, forCellReuseIdentifier: cellId )
@@ -29,21 +28,19 @@ class StatisticsViewController: UIViewController {
     
     
     func configureView() {
-//        view.
-        
         view.addSubview(headerImage)
         view.addSubview(labeltitleHeader)
         view.addSubview(viewChart)
         view.addSubview(labelDescription)
         view.addSubview(tableTransactions)
         
-        headerImage.fill(top: view.topAnchor,
+        headerImage.fillConstraints(top: view.topAnchor,
                          leading: view.leadingAnchor,
                          trailing: view.trailingAnchor,
                          bottom: nil)
         
         labeltitleHeader.textAlignment = .center
-        labeltitleHeader.fill(top: headerImage.topAnchor,
+        labeltitleHeader.fillConstraints(top: headerImage.topAnchor,
                               leading: headerImage.leadingAnchor,
                               trailing: headerImage.trailingAnchor,
                               bottom: nil,
@@ -51,19 +48,19 @@ class StatisticsViewController: UIViewController {
         
         viewChart.backgroundColor = .blue
         viewChart.layer.cornerRadius = 10
-        viewChart.fill(top: headerImage.bottomAnchor,
+        viewChart.fillConstraints(top: headerImage.bottomAnchor,
                        leading: view.leadingAnchor,
                        trailing: view.trailingAnchor,
                        bottom: nil,
                        padding: .init(top: 20, left: 20, bottom: 0, right: 20))
         viewChart.heightAnchor.constraint(equalToConstant: 170).isActive = true
         
-        labelDescription.fill(top: viewChart.bottomAnchor,
+        labelDescription.fillConstraints(top: viewChart.bottomAnchor,
                               leading: view.leadingAnchor,
                               trailing: view.trailingAnchor, bottom: nil, padding: .init(top: 20, left: 20, bottom: 0, right: 20))
         
         
-        tableTransactions.fill(top: labelDescription.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.bottomAnchor, padding: .init(top: 20, left: 20, bottom: 20, right: 20))
+        tableTransactions.fillConstraints(top: labelDescription.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.bottomAnchor, padding: .init(top: 20, left: 20, bottom: 20, right: 20))
 
     }
     
