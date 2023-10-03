@@ -30,6 +30,7 @@
 		EDE88BAC2AB3BB8200CD9543 /* Extensions + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE88BAB2AB3BB8200CD9543 /* Extensions + UILabel.swift */; };
 		EDE88BAF2AB3C61900CD9543 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE88BAE2AB3C61900CD9543 /* ProfileCell.swift */; };
 		EDFB0B092ACC7E0800CC2197 /* Extensions + UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0B082ACC7E0800CC2197 /* Extensions + UITextField.swift */; };
+		EDFB0B0C2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0B0A2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		EDE88BAB2AB3BB8200CD9543 /* Extensions + UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions + UILabel.swift"; sourceTree = "<group>"; };
 		EDE88BAE2AB3C61900CD9543 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		EDFB0B082ACC7E0800CC2197 /* Extensions + UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions + UITextField.swift"; sourceTree = "<group>"; };
+		EDFB0B0B2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = accountOrganizationCoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				ED9776FD2A657C2E0014B054 /* Assets.xcassets */,
 				ED9776FF2A657C2E0014B054 /* LaunchScreen.storyboard */,
 				ED9777022A657C2E0014B054 /* Info.plist */,
+				EDFB0B0A2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodeld */,
 			);
 			path = "account-organization";
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				EDE88BAF2AB3C61900CD9543 /* ProfileCell.swift in Sources */,
 				ED05EDFC2ABB6C3A000F8639 /* NewPantryViewController.swift in Sources */,
 				EDE88BAA2AB3B16100CD9543 /* Extension + UIView.swift in Sources */,
+				EDFB0B0C2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodeld in Sources */,
 				EDCE83BB2ABFEB01005D8A12 /* StatisticsViewController.swift in Sources */,
 				EDE88BA02AB3AAFF00CD9543 /* TabBarViewController.swift in Sources */,
 				EDE88BAC2AB3BB8200CD9543 /* Extensions + UILabel.swift in Sources */,
@@ -644,6 +648,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EDFB0B0A2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EDFB0B0B2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodel */,
+			);
+			currentVersion = EDFB0B0B2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodel */;
+			path = accountOrganizationCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ED9776E92A657C2C0014B054 /* Project object */;
 }

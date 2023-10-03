@@ -99,5 +99,23 @@ extension UIView {
                               bottom: nil,
                               padding: .init(top: 155, left: 0, bottom: 0, right: 0))
     }
+    
+     static func configureHeaderView(viewReference: UIView, titleHeader: String) {
+        let headerImage: UIImageView = .headerImageView()
+        let labeltitleHeader: UILabel = .textBolLabel(22,textColor: .white, description: titleHeader)
+        headerImage.fillConstraints(top: viewReference.topAnchor,
+                         leading: viewReference.leadingAnchor,
+                         trailing: viewReference.trailingAnchor,
+                         bottom: nil)
+
+        labeltitleHeader.textAlignment = .center
+        labeltitleHeader.fillConstraints(top: viewReference.topAnchor,
+                              leading: viewReference.leadingAnchor,
+                              trailing: viewReference.trailingAnchor,
+                              bottom: nil,
+                              padding: .init(top: 120, left: 0, bottom: 0, right: 0))
+    }
+    
+    
 }
 
