@@ -23,14 +23,15 @@ class CardInformation: UIView {
     var labelDescriptionValueOut: UILabel = .textBolLabel(20, textColor: .white, description: "R$ 1.000,00")
      
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+     
         setupView()
     }
     
     func setupView() {
-        
+//        heightAnchor.constraint(equalTo: 200)
+        heightAnchor.constraint(equalToConstant: 200).isActive = true
         backgroundColor = UIColor(red: 14/255, green: 41/255, blue: 84/255, alpha: 1)
         layer.cornerRadius = 10
 

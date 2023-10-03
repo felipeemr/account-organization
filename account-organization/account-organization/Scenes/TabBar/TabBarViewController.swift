@@ -10,8 +10,8 @@ import UIKit
 
 class BaseTabBarViewController: UITabBarController {
     
-    private let floatingButton: UIButton = .floatButton()
-
+//    private let floatingButton: UIButton = .floatButton()
+    private var isFloatingButtonHidden = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,8 +22,8 @@ class BaseTabBarViewController: UITabBarController {
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
             
-            view.addSubview(floatingButton)
-            floatingButton.addTarget(self, action: #selector(floatingButtonTapped), for: .touchUpInside)
+//            view.addSubview(floatingButton)
+//            floatingButton.addTarget(self, action: #selector(floatingButtonTapped), for: .touchUpInside)
 
         }
         
@@ -31,7 +31,7 @@ class BaseTabBarViewController: UITabBarController {
         
         let homeViewController = createItem(viewController: HomeViewController(), image: "home-icon")
         let statisticsViewController = createItem(viewController: ViewController(), image: "statistics-icon")
-        let addViewController = createItem(viewController: ViewController(), image: "")
+        let addViewController = createItem(viewController: NewPantryViewController(), image: "add-icon")
         let walletViewController = createItem(viewController: StatisticsViewController(), image: "wallet-icon")
         let profileViewController = createItem(viewController: ProfileViewController(), image: "profile-icon")
         
@@ -49,12 +49,12 @@ class BaseTabBarViewController: UITabBarController {
     
     @objc private func floatingButtonTapped() {
         let newPantryViewController = NewPantryViewController()
-        newPantryViewController.modalPresentationStyle = .popover
-        newPantryViewController.modalPresentationCapturesStatusBarAppearance = false
-        
-        
+        newPantryViewController.modalPresentationStyle = .pageSheet
+        newPantryViewController.modalTransitionStyle = .coverVertical
+        newPantryViewController.hidesBottomBarWhenPushed = true
+
         if let safeNavigation = selectedViewController as? UINavigationController {
-            safeNavigation.modalPresentationStyle = .popover
+            safeNavigation.modalPresentationStyle = .fullScreen
             safeNavigation.pushViewController(newPantryViewController, animated: true)
         }
     }

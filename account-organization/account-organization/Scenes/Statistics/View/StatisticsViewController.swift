@@ -57,10 +57,15 @@ class StatisticsViewController: UIViewController {
         
         labelDescription.fillConstraints(top: viewChart.bottomAnchor,
                               leading: view.leadingAnchor,
-                              trailing: view.trailingAnchor, bottom: nil, padding: .init(top: 20, left: 20, bottom: 0, right: 20))
+                              trailing: view.trailingAnchor,
+                                         bottom: nil,
+                                         padding: .init(top: 20, left: 20, bottom: 0, right: 20))
         
-        
-        tableTransactions.fillConstraints(top: labelDescription.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.bottomAnchor, padding: .init(top: 20, left: 20, bottom: 20, right: 20))
+        tableTransactions.backgroundColor = .clear
+        tableTransactions.fillConstraints(top: labelDescription.bottomAnchor,
+                                          leading: view.leadingAnchor, trailing: view.trailingAnchor,
+                                          bottom: view.bottomAnchor,
+                                          padding: .init(top: 20, left: 20, bottom: 20, right: 20))
 
     }
     
@@ -75,7 +80,10 @@ extension StatisticsViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TransactionCell
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
-            cell.render(nameImage: "home-icon", infoTitle: "comida japonesa", infoDate: "26/08/2023", infoBalace: "R$ 10,00")
+            cell.render(nameImage: "home-icon",
+                        infoTitle: "comida japonesa",
+                        infoDate: "26/08/2023",
+                        infoBalace: "R$ 10,00")
             return cell
     }
     

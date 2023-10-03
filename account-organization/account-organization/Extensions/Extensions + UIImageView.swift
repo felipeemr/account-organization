@@ -25,10 +25,10 @@ extension UIImageView {
     
    static func headerImageView() -> UIImageView {
         let imageView = UIImageView(image: UIImage(named: "home_retangle"))
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 310).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 290).isActive = true
         
         return imageView
     }

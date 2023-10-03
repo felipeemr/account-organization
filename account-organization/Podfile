@@ -18,5 +18,6 @@ target 'account-organization' do
   pod 'RxOptional'
   
   pod 'SnapKit'            
+  pod 'IQKeyboardManagerSwift'
 
 end

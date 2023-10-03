@@ -21,4 +21,14 @@ extension UIButton {
         return button
         
     }
+    
+    static func sendButton(title: String) -> UIButton {
+        let button = UIButton(type: .custom)
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.backgroundColor = UIColor(red: 14/255, green: 41/255, blue: 84/255, alpha: 1)
+        button.layer.cornerRadius = 10
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }
 }
