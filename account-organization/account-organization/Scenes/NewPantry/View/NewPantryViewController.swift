@@ -16,16 +16,16 @@ class NewPantryViewController: UIViewController {
     let labelTitleName: UILabel = .textBolLabel(18, textColor: .darkGray, description: "Nome")
     let textFieldName: UITextField = .configureTextField(placehouder: "Nome")
     let labelTitleSpend: UILabel = .textBolLabel(18, textColor: .darkGray, description: "Gasto")
-    let textFieldSpend: UITextField = .configureTextField(placehouder: "Gasto")
+    let textFieldSpend: UITextField = .configureTextField(placehouder: "Digite um valor")
     let labelTitleDate: UILabel = .textBolLabel(18, textColor: .darkGray, description: "Data")
     let datePicker: UITextField = .configureTextField(placehouder: "data")
-
     let buttonSend: UIButton = .sendButton(title: "Enviar")
     let stackView = UIStackView()
     
     let scrollView = UIScrollView()
     let contentView = UIView()
     
+    let viewModel = NewPantryViewModel()
     
     let viewSeparator = {
         let view = UIView()
@@ -69,14 +69,15 @@ class NewPantryViewController: UIViewController {
         stackView.addArrangedSubview(datePicker)
         stackView.addArrangedSubview(viewSeparator)
         stackView.addArrangedSubview(buttonSend)
-        textFieldSpend.keyboardType = .numberPad
+        textFieldSpend.keyboardType = .decimalPad
 
     }
     
     @objc private func nextPass() {
         if let name = textFieldName.text,
-           let spend = textFieldSpend.text {
-
+           let spend = textFieldSpend.text,
+           let _data = datePicker.text{  
+            viewModel.saveData(title: name, value: spend, date: _data)
             print( spend, name)
         }
     }

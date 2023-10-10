@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 
 
@@ -20,6 +21,8 @@ class HomeViewController: UIViewController{
     let cellId = "cellId"
     
     var characters = ["profile-icon", "home-icon"]
+    
+    let viewModel = ExpensesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,14 +83,24 @@ class HomeViewController: UIViewController{
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return   0
+//        return   viewModel.fetchExpenses().count
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TransactionCell
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
-        cell.render(nameImage: "home-icon", infoTitle: "comida japonesa", infoDate: "26/08/2023", infoBalace: "R$ 10,00")
+
+        let expenses = viewModel.fetchExpenses()
+        let expense = expenses[indexPath.row]
+
+        // Configure a célula com os dados do Core Data
+        cell.render(nameImage: "home-icon",
+                    infoTitle: expense.name ?? "",
+                    infoDate: expense.date ?? "",
+                    infoBalace: "R$ ")
+
         return cell
     }
 }

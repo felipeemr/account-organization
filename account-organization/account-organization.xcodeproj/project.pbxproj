@@ -31,6 +31,8 @@
 		EDE88BAF2AB3C61900CD9543 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE88BAE2AB3C61900CD9543 /* ProfileCell.swift */; };
 		EDFB0B092ACC7E0800CC2197 /* Extensions + UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0B082ACC7E0800CC2197 /* Extensions + UITextField.swift */; };
 		EDFB0B0C2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0B0A2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodeld */; };
+		EDFB0B0F2ACC958C00CC2197 /* NewPantryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0B0E2ACC958C00CC2197 /* NewPantryViewModel.swift */; };
+		EDFB0B112ACCA71600CC2197 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0B102ACCA71600CC2197 /* ExpensesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		EDE88BAE2AB3C61900CD9543 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		EDFB0B082ACC7E0800CC2197 /* Extensions + UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions + UITextField.swift"; sourceTree = "<group>"; };
 		EDFB0B0B2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = accountOrganizationCoreData.xcdatamodel; sourceTree = "<group>"; };
+		EDFB0B0E2ACC958C00CC2197 /* NewPantryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPantryViewModel.swift; sourceTree = "<group>"; };
+		EDFB0B102ACCA71600CC2197 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,9 @@
 		ED05EDF92ABB6BD8000F8639 /* NewPantry */ = {
 			isa = PBXGroup;
 			children = (
+				EDFB0B0D2ACC957E00CC2197 /* ViewModel */,
 				ED05EDFA2ABB6C24000F8639 /* View */,
+				EDFB0B102ACCA71600CC2197 /* ExpensesModel.swift */,
 			);
 			path = NewPantry;
 			sourceTree = "<group>";
@@ -294,6 +300,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		EDFB0B0D2ACC957E00CC2197 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EDFB0B0E2ACC958C00CC2197 /* NewPantryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,7 +425,9 @@
 			files = (
 				ED05EDF52ABA4651000F8639 /* CardInformation.swift in Sources */,
 				ED7B6B742AB93DFD00A87E5C /* TransactionCell.swift in Sources */,
+				EDFB0B112ACCA71600CC2197 /* ExpensesModel.swift in Sources */,
 				EDE88BAF2AB3C61900CD9543 /* ProfileCell.swift in Sources */,
+				EDFB0B0F2ACC958C00CC2197 /* NewPantryViewModel.swift in Sources */,
 				ED05EDFC2ABB6C3A000F8639 /* NewPantryViewController.swift in Sources */,
 				EDE88BAA2AB3B16100CD9543 /* Extension + UIView.swift in Sources */,
 				EDFB0B0C2ACC848D00CC2197 /* accountOrganizationCoreData.xcdatamodeld in Sources */,
